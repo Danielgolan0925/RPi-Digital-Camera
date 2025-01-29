@@ -17,7 +17,10 @@ def take_snapshot(frame):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     img_name = f"snapshot_{timestamp}.png"
     cv2.imwrite(img_name, frame)
+    cv2.imshow("Snapshot", frame)
     print(f"{img_name} written!")
+    cv2.waitKey(2000)
+    cv2.destroyWindow("Snapshot")
 
 try:
     while True:
